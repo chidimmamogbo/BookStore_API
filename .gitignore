@@ -1,0 +1,20 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Environment variables & secrets
+.env
+
+# Database & test artifacts
+*.db
+*.sqlite
+.pytest_cache/
+.coverage
+htmlcov/

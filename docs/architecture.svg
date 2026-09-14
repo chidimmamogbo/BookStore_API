@@ -1,0 +1,297 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 860" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+
+    <!-- Container Header Gradients -->
+    <linearGradient id="clientGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+    <linearGradient id="apiGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#4f46e5" />
+    </linearGradient>
+    <linearGradient id="migGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d97706" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+    <linearGradient id="dbGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+
+    <!-- Component Box Filters & Shadows -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4" />
+    </filter>
+
+    <!-- Arrow Markers -->
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8" />
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#fbbf24" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#34d399" />
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#a78bfa" />
+    </marker>
+  </defs>
+
+  <style>
+    .title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 24px; font-weight: 700; fill: #f8fafc; }
+    .subtitle { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; fill: #94a3b8; }
+    .section-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 14px; font-weight: 700; fill: #ffffff; letter-spacing: 0.5px; }
+    .card-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 600; fill: #e2e8f0; }
+    .card-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; fill: #94a3b8; }
+    .code-text { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; font-size: 10px; fill: #cbd5e1; }
+    .badge-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 10px; font-weight: 600; fill: #ffffff; }
+    .auth-tag { fill: #f43f5e; font-weight: 700; }
+    .pub-tag { fill: #10b981; font-weight: 700; }
+  </style>
+
+  <!-- Canvas Background -->
+  <rect width="1100" height="860" rx="16" fill="url(#bgGrad)" />
+  <rect x="1" y="1" width="1098" height="858" rx="15" fill="none" stroke="#334155" stroke-width="1.5" />
+
+  <!-- Header -->
+  <g transform="translate(50, 45)">
+    <text x="0" y="0" class="title">Bookstore API Architecture &amp; System Flow</text>
+    <text x="0" y="24" class="subtitle">FastAPI &bull; PostgreSQL 16 &bull; Alembic Auto-Migrations &bull; User Session Auth &bull; Docker Compose &bull; uv</text>
+  </g>
+
+  <!-- ================= CLIENT / SWAGGER UI SECTION ================= -->
+  <g transform="translate(50, 95)" filter="url(#shadow)">
+    <rect width="1000" height="100" rx="10" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" />
+    <rect width="1000" height="30" rx="10" fill="url(#clientGrad)" />
+    <!-- Fix bottom corners of header -->
+    <rect y="20" width="1000" height="10" fill="url(#clientGrad)" />
+    <text x="20" y="20" class="section-title">CLIENT &amp; CONSUMER LAYER</text>
+
+    <!-- Swagger UI Card -->
+    <g transform="translate(25, 42)">
+      <rect width="450" height="46" rx="6" fill="#0f172a" stroke="#334155" />
+      <circle cx="20" cy="23" r="10" fill="#10b981" />
+      <text x="16" y="27" font-family="sans-serif" font-size="12" font-weight="bold" fill="#ffffff">S</text>
+      <text x="40" y="20" class="card-title">Interactive Swagger UI (/docs)</text>
+      <text x="40" y="36" class="card-text">Authorize Modal (Bearer Token) &bull; OpenAPI 3.1 &bull; Try-It-Out Requests</text>
+    </g>
+
+    <!-- HTTP Clients Card -->
+    <g transform="translate(525, 42)">
+      <rect width="450" height="46" rx="6" fill="#0f172a" stroke="#334155" />
+      <circle cx="20" cy="23" r="10" fill="#0284c7" />
+      <text x="14" y="27" font-family="sans-serif" font-size="11" font-weight="bold" fill="#ffffff">&lt;&gt;</text>
+      <text x="40" y="20" class="card-title">External HTTP Clients / curl / Web Frontends</text>
+      <text x="40" y="36" class="card-text">Header: Authorization: Bearer &lt;session_token&gt; on write endpoints</text>
+    </g>
+  </g>
+
+  <!-- Arrow from Client to API -->
+  <path d="M 550 195 L 550 240" fill="none" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrow-blue)" />
+  <rect x="460" y="205" width="180" height="22" rx="4" fill="#0369a1" />
+  <text x="550" y="220" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#ffffff">HTTP Requests :8000</text>
+
+  <!-- ================= DOCKER COMPOSE ORCHESTRATION BOX ================= -->
+  <rect x="35" y="245" width="1030" height="580" rx="14" fill="#0b1329" stroke="#475569" stroke-width="1.5" stroke-dasharray="6,4" />
+  <rect x="55" y="235" width="260" height="22" rx="4" fill="#334155" />
+  <text x="65" y="250" class="section-title">DOCKER COMPOSE ORCHESTRATION</text>
+
+  <!-- ================= API CONTAINER ================= -->
+  <g transform="translate(50, 275)" filter="url(#shadow)">
+    <rect width="570" height="525" rx="10" fill="#1e293b" stroke="#6366f1" stroke-width="1.5" />
+    <rect width="570" height="32" rx="10" fill="url(#apiGrad)" />
+    <rect y="22" width="570" height="10" fill="url(#apiGrad)" />
+    <text x="20" y="22" class="section-title">SERVICE: api (FastAPI + uv | Container: bookstore_api)</text>
+
+    <!-- Routers Box -->
+    <g transform="translate(20, 48)">
+      <rect width="530" height="185" rx="8" fill="#0f172a" stroke="#334155" />
+      <text x="15" y="24" class="card-title">Application Routers &amp; Endpoints (app/main.py)</text>
+
+      <!-- Auth Endpoints -->
+      <g transform="translate(15, 36)">
+        <rect width="245" height="60" rx="5" fill="#1e293b" stroke="#475569" />
+        <text x="10" y="18" class="card-title">Auth Endpoints (/api/v1/auth)</text>
+        <text x="10" y="34" class="code-text"><tspan class="pub-tag">POST</tspan> /register &bull; <tspan class="pub-tag">POST</tspan> /login</text>
+        <text x="10" y="50" class="code-text"><tspan class="auth-tag">POST</tspan> /logout &bull; <tspan class="auth-tag">GET</tspan> /me</text>
+      </g>
+
+      <!-- Health Endpoints -->
+      <g transform="translate(270, 36)">
+        <rect width="245" height="60" rx="5" fill="#1e293b" stroke="#475569" />
+        <text x="10" y="18" class="card-title">System Endpoints</text>
+        <text x="10" y="34" class="code-text"><tspan class="pub-tag">GET</tspan> / (Welcome &amp; links)</text>
+        <text x="10" y="50" class="code-text"><tspan class="pub-tag">GET</tspan> /health (DB connection status)</text>
+      </g>
+
+      <!-- Authors Endpoints -->
+      <g transform="translate(15, 106)">
+        <rect width="245" height="65" rx="5" fill="#1e293b" stroke="#475569" />
+        <text x="10" y="18" class="card-title">Authors Endpoints (/api/v1/authors)</text>
+        <text x="10" y="34" class="code-text"><tspan class="pub-tag">GET</tspan> / &bull; <tspan class="pub-tag">GET</tspan> /{id} <tspan fill="#10b981">(Public)</tspan></text>
+        <text x="10" y="50" class="code-text"><tspan class="auth-tag">POST</tspan> / &bull; <tspan class="auth-tag">PUT</tspan> /{id} &bull; <tspan class="auth-tag">DEL</tspan> /{id} <tspan fill="#f43f5e">(Auth)</tspan></text>
+      </g>
+
+      <!-- Books Endpoints -->
+      <g transform="translate(270, 106)">
+        <rect width="245" height="65" rx="5" fill="#1e293b" stroke="#475569" />
+        <text x="10" y="18" class="card-title">Books Endpoints (/api/v1/books)</text>
+        <text x="10" y="34" class="code-text"><tspan class="pub-tag">GET</tspan> / &bull; <tspan class="pub-tag">GET</tspan> /{id} <tspan fill="#10b981">(Public)</tspan></text>
+        <text x="10" y="50" class="code-text"><tspan class="auth-tag">POST</tspan> / &bull; <tspan class="auth-tag">PUT</tspan> /{id} &bull; <tspan class="auth-tag">DEL</tspan> /{id} <tspan fill="#f43f5e">(Auth)</tspan></text>
+      </g>
+    </g>
+
+    <!-- Session Auth Middleware Dependency -->
+    <g transform="translate(20, 246)">
+      <rect width="530" height="70" rx="8" fill="#0f172a" stroke="#e11d48" stroke-width="1.2" />
+      <circle cx="25" cy="35" r="14" fill="#e11d48" />
+      <text x="21" y="40" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff">&#128274;</text>
+      <text x="48" y="24" class="card-title">Session Authentication Dependency (app/auth.py)</text>
+      <text x="48" y="42" class="card-text">&bull; HTTPBearer security scheme extracts session token from request</text>
+      <text x="48" y="58" class="card-text">&bull; Validates active status &amp; expiry in user_sessions table; guards write endpoints (401)</text>
+    </g>
+
+    <!-- Schemas & ORM Data Layer -->
+    <g transform="translate(20, 328)">
+      <rect width="530" height="92" rx="8" fill="#0f172a" stroke="#334155" />
+      <text x="15" y="20" class="card-title">Validation &amp; ORM Layer (app/schemas.py &amp; app/database.py)</text>
+      <g transform="translate(15, 30)">
+        <rect width="240" height="48" rx="5" fill="#1e293b" />
+        <text x="10" y="18" class="card-title">Pydantic Schemas</text>
+        <text x="10" y="34" class="card-text">Request validation &amp; typed response models</text>
+      </g>
+      <g transform="translate(270, 30)">
+        <rect width="245" height="48" rx="5" fill="#1e293b" />
+        <text x="10" y="18" class="card-title">SQLAlchemy 2.0 ORM</text>
+        <text x="10" y="34" class="card-text">Engine pool &bull; SessionLocal &bull; Base models</text>
+      </g>
+    </g>
+
+    <!-- Container Runtime & uv sync -->
+    <g transform="translate(20, 432)">
+      <rect width="530" height="75" rx="8" fill="#0f172a" stroke="#4f46e5" stroke-width="1.2" />
+      <text x="15" y="20" class="card-title">Tooling &amp; Environment: Astral uv</text>
+      <text x="15" y="38" class="code-text">&bull; pyproject.toml + uv.lock &rarr; Docker build uses: uv sync --frozen</text>
+      <text x="15" y="54" class="code-text">&bull; requirements.txt exported compatibility artifact (no version drift)</text>
+      <text x="15" y="68" class="code-text">&bull; Uvicorn ASGI server running on 0.0.0.0:8000</text>
+    </g>
+  </g>
+
+  <!-- ================= STARTUP & MIGRATIONS SECTION ================= -->
+  <g transform="translate(650, 275)" filter="url(#shadow)">
+    <rect width="400" height="190" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5" />
+    <rect width="400" height="32" rx="10" fill="url(#migGrad)" />
+    <rect y="22" width="400" height="10" fill="url(#migGrad)" />
+    <text x="20" y="22" class="section-title">STARTUP &amp; MIGRATION LIFECYCLE</text>
+
+    <!-- entrypoint.sh -->
+    <g transform="translate(15, 45)">
+      <rect width="370" height="130" rx="8" fill="#0f172a" stroke="#334155" />
+      <text x="12" y="20" class="card-title">Container Entrypoint (entrypoint.sh)</text>
+      
+      <!-- Step 1 -->
+      <circle cx="22" cy="40" r="9" fill="#f59e0b" />
+      <text x="19" y="44" font-family="sans-serif" font-size="10" font-weight="bold" fill="#000000">1</text>
+      <text x="38" y="44" class="card-text">Wait for PostgreSQL TCP readiness at db:5432</text>
+
+      <!-- Step 2 -->
+      <circle cx="22" cy="70" r="9" fill="#f59e0b" />
+      <text x="19" y="74" font-family="sans-serif" font-size="10" font-weight="bold" fill="#000000">2</text>
+      <text x="38" y="74" class="code-text"><tspan fill="#fcd34d">uv run alembic upgrade head</tspan> (Auto-migrate)</text>
+
+      <!-- Step 3 -->
+      <circle cx="22" cy="100" r="9" fill="#10b981" />
+      <text x="19" y="104" font-family="sans-serif" font-size="10" font-weight="bold" fill="#000000">3</text>
+      <text x="38" y="104" class="code-text"><tspan fill="#6ee7b7">exec uv run uvicorn app.main:app</tspan> (Start API)</text>
+    </g>
+  </g>
+
+  <!-- ================= POSTGRESQL DATABASE CONTAINER ================= -->
+  <g transform="translate(650, 485)" filter="url(#shadow)">
+    <rect width="400" height="315" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="1.5" />
+    <rect width="400" height="32" rx="10" fill="url(#dbGrad)" />
+    <rect y="22" width="400" height="10" fill="url(#dbGrad)" />
+    <text x="20" y="22" class="section-title">SERVICE: db (PostgreSQL 16 Alpine | Container: bookstore_db)</text>
+
+    <!-- Healthcheck Badge -->
+    <g transform="translate(260, 6)">
+      <rect width="130" height="20" rx="4" fill="#064e3b" stroke="#34d399" />
+      <text x="325" y="20" text-anchor="middle" class="badge-text">&#10003; pg_isready healthy</text>
+    </g>
+
+    <!-- Tables Grid -->
+    <g transform="translate(15, 45)">
+      <!-- authors table -->
+      <g transform="translate(0, 0)">
+        <rect width="180" height="115" rx="6" fill="#0f172a" stroke="#334155" />
+        <rect width="180" height="22" rx="6" fill="#1e293b" />
+        <rect y="16" width="180" height="6" fill="#1e293b" />
+        <text x="10" y="15" font-family="sans-serif" font-size="11" font-weight="bold" fill="#38bdf8">&#128451; authors</text>
+        <text x="10" y="38" class="code-text">&bull; id: INT (PK)</text>
+        <text x="10" y="54" class="code-text">&bull; name: VARCHAR(150)</text>
+        <text x="10" y="70" class="code-text">&bull; bio: TEXT</text>
+        <text x="10" y="86" class="code-text">&bull; birth_date: DATE</text>
+        <text x="10" y="102" class="code-text">&bull; created_at, updated_at</text>
+      </g>
+
+      <!-- books table -->
+      <g transform="translate(190, 0)">
+        <rect width="180" height="115" rx="6" fill="#0f172a" stroke="#334155" />
+        <rect width="180" height="22" rx="6" fill="#1e293b" />
+        <rect y="16" width="180" height="6" fill="#1e293b" />
+        <text x="10" y="15" font-family="sans-serif" font-size="11" font-weight="bold" fill="#38bdf8">&#128451; books</text>
+        <text x="10" y="38" class="code-text">&bull; id: INT (PK)</text>
+        <text x="10" y="54" class="code-text">&bull; title: VARCHAR(255)</text>
+        <text x="10" y="70" class="code-text">&bull; isbn: VARCHAR(30)</text>
+        <text x="10" y="86" class="code-text">&bull; price: FLOAT</text>
+        <text x="10" y="102" class="code-text" fill="#f59e0b">&bull; author_id: INT (FK)</text>
+      </g>
+
+      <!-- users table -->
+      <g transform="translate(0, 125)">
+        <rect width="180" height="115" rx="6" fill="#0f172a" stroke="#334155" />
+        <rect width="180" height="22" rx="6" fill="#1e293b" />
+        <rect y="16" width="180" height="6" fill="#1e293b" />
+        <text x="10" y="15" font-family="sans-serif" font-size="11" font-weight="bold" fill="#a78bfa">&#128451; users</text>
+        <text x="10" y="38" class="code-text">&bull; id: INT (PK)</text>
+        <text x="10" y="54" class="code-text">&bull; username: VARCHAR(50)</text>
+        <text x="10" y="70" class="code-text">&bull; email: VARCHAR(100)</text>
+        <text x="10" y="86" class="code-text">&bull; hashed_password</text>
+        <text x="10" y="102" class="code-text">&bull; is_active: BOOL</text>
+      </g>
+
+      <!-- user_sessions table -->
+      <g transform="translate(190, 125)">
+        <rect width="180" height="115" rx="6" fill="#0f172a" stroke="#334155" />
+        <rect width="180" height="22" rx="6" fill="#1e293b" />
+        <rect y="16" width="180" height="6" fill="#1e293b" />
+        <text x="10" y="15" font-family="sans-serif" font-size="11" font-weight="bold" fill="#a78bfa">&#128451; user_sessions</text>
+        <text x="10" y="38" class="code-text">&bull; id: INT (PK)</text>
+        <text x="10" y="54" class="code-text">&bull; session_token: STR</text>
+        <text x="10" y="70" class="code-text" fill="#f59e0b">&bull; user_id: INT (FK)</text>
+        <text x="10" y="86" class="code-text">&bull; expires_at: DATETIME</text>
+        <text x="10" y="102" class="code-text">&bull; is_active: BOOL</text>
+      </g>
+    </g>
+
+    <!-- Volume persistence notice -->
+    <g transform="translate(15, 290)">
+      <text x="0" y="10" class="card-text" fill="#6ee7b7">&#128190; Named Volume: postgres_data persists data across container restarts</text>
+    </g>
+  </g>
+
+  <!-- Connectors / Flow Lines -->
+  <!-- API to Database (SQL Queries) -->
+  <path d="M 620 560 L 640 560" fill="none" stroke="#34d399" stroke-width="2.5" marker-end="url(#arrow-green)" />
+  
+  <!-- Startup Migration to Database -->
+  <path d="M 850 465 L 850 475" fill="none" stroke="#fbbf24" stroke-width="2.5" marker-end="url(#arrow-amber)" />
+
+</svg>
