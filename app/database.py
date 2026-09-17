@@ -7,7 +7,7 @@ load_dotenv()
 
 DATABASE_URL = os.getenv(
     "DATABASE_URL",
-    "postgresql://postgres:postgres@localhost:5432/bookstore"
+    "postgresql://bookstore_postgres_api_user:Q3I5mSWEJss9J7EaGc73J3Qdvvgb9DeL@dpg-dalrtj8ae00c73ce4nhg-a.frankfurt-postgres.render.com/bookstore_postgres_api"
 )
 
 # Fix Heroku/legacy style postgres:// url to postgresql://
